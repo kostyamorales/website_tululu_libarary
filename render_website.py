@@ -41,7 +41,8 @@ def get_books():
 
 if __name__ == '__main__':
     book_cards = get_books()
-    books_pairs = list(chunked(book_cards, 2))
+    chunk_size = 2
+    books_pairs = list(chunked(book_cards, chunk_size))
     pairs_html = 10
     books_pairs_split = list(chunked(books_pairs, pairs_html))
     pages_quantity = len(books_pairs_split)
