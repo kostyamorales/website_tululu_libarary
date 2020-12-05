@@ -36,7 +36,16 @@ def get_books():
     return books_information
 
 
+def remove_old_pages():
+    for file in Path('./pages').glob('*.html'):
+        try:
+            file.unlink()
+        except OSError:
+            continue
+
+
 if __name__ == '__main__':
+    remove_old_pages()
     book_cards = get_books()
     chunk_size = 2
     books_pairs = list(chunked(book_cards, chunk_size))
