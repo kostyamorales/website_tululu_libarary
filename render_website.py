@@ -18,7 +18,7 @@ def on_reload():
 
 
 def get_books():
-    with open("books.json", "r") as file:
+    with open("books.json", "r", encoding='utf-8') as file:
         books_json = file.read()
     parsed_books = json.loads(books_json)
     books_information = []
