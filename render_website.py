@@ -6,12 +6,6 @@ from os import makedirs
 
 
 def on_reload():
-    env = Environment(
-        loader=FileSystemLoader('.'),
-        autoescape=select_autoescape(['html', 'xml'])
-    )
-    template = env.get_template('template.html')
-    makedirs('pages', exist_ok=True)
     for page_num, page_books_pairs in enumerate(books_pages, 1):
         rendered_page = template.render(
             books_pairs=page_books_pairs,
@@ -46,6 +40,13 @@ if __name__ == '__main__':
     pairs_html = 10
     books_pages = list(chunked(books_pairs, pairs_html))
     pages_quantity = len(books_pages)
+
+    env = Environment(
+        loader=FileSystemLoader('.'),
+        autoescape=select_autoescape(['html', 'xml'])
+    )
+    template = env.get_template('template.html')
+    makedirs('pages', exist_ok=True)
 
     on_reload()
 
