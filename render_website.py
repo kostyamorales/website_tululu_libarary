@@ -12,7 +12,7 @@ def on_reload():
     )
     template = env.get_template('template.html')
     makedirs('pages', exist_ok=True)
-    for page_num, page_books_pairs in enumerate(books_pairs_split, 1):
+    for page_num, page_books_pairs in enumerate(books_pages, 1):
         rendered_page = template.render(
             books_pairs=page_books_pairs,
             pages_quantity=pages_quantity,
@@ -44,8 +44,8 @@ if __name__ == '__main__':
     chunk_size = 2
     books_pairs = list(chunked(book_cards, chunk_size))
     pairs_html = 10
-    books_pairs_split = list(chunked(books_pairs, pairs_html))
-    pages_quantity = len(books_pairs_split)
+    books_pages = list(chunked(books_pairs, pairs_html))
+    pages_quantity = len(books_pages)
 
     on_reload()
 
