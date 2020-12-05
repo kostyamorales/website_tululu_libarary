@@ -3,7 +3,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 import json
 from more_itertools import chunked
 from os import makedirs
-from pathlib import PurePath, Path
+from pathlib import Path
 
 
 def on_reload():
@@ -23,10 +23,8 @@ def get_books():
     parsed_books = json.loads(books_json)
     books_information = []
     for parsed_book in parsed_books:
-        book_path_parts = PurePath(parsed_book['book_path']).parts
-        book_path = Path('..', book_path_parts[-2], book_path_parts[-1])
-        image_src_parts = PurePath(parsed_book['image_src']).parts
-        image_src = Path('..', image_src_parts[-2], image_src_parts[-1])
+        book_path = Path('..', parsed_book['book_path'])
+        image_src = Path('..', parsed_book['image_src'])
         book = {
             'genres': parsed_book['genres'],
             'book_path': book_path,
