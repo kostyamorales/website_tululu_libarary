@@ -24,9 +24,9 @@ def get_books():
     books_information = []
     for parsed_book in parsed_books:
         book_path_parts = PurePath(parsed_book['book_path']).parts
-        book_path = Path('..', book_path_parts[-2], book_path_parts[-1])
+        book_path = Path('..', book_path_parts[0], book_path_parts[1])
         image_src_parts = PurePath(parsed_book['image_src']).parts
-        image_src = Path('..', image_src_parts[-2], image_src_parts[-1])
+        image_src = Path('..', image_src_parts[0], image_src_parts[1])
         book = {
             'genres': parsed_book['genres'],
             'book_path': book_path,
