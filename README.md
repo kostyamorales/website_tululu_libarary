@@ -5,7 +5,7 @@
 ![Alt text](screenshot/site.png?raw=true "Optional Title")
 
 
-Посмотреть пример работы можно в [GitHub Pages](https://kostyamorales.github.io/website_tululu_libarary/pages/index1.html).
+Посмотреть пример работы можно в [GitHub Pages](https://kostyamorales.github.io/website_tululu_library/pages/index1.html).
 
 ## Подготовка к работе
 Для начала определитесь с книгами, которые хотите видеть в вашей библиотеке и скачайте их используя парсер [tululu_library](https://github.com/kostyamorales/tululu_library).
