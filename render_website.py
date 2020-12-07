@@ -23,10 +23,8 @@ def get_books():
     parsed_books = json.loads(books_json)
     books_information = []
     for parsed_book in parsed_books:
-        book_path_parts = PurePath(parsed_book['book_path']).parts
-        book_path = Path('..', book_path_parts[0], book_path_parts[1])
-        image_src_parts = PurePath(parsed_book['image_src']).parts
-        image_src = Path('..', image_src_parts[0], image_src_parts[1])
+        book_path = Path('..', PurePath(parsed_book['book_path']))
+        image_src = Path('..', PurePath(parsed_book['image_src']))
         book = {
             'genres': parsed_book['genres'],
             'book_path': book_path,
