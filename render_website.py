@@ -21,7 +21,7 @@ def get_books():
     with open("books.json", "r", encoding='utf-8') as file:
         books_json = file.read()
     parsed_books = json.loads(books_json)
-    books_information = []
+    books_context = []
     for parsed_book in parsed_books:
         book_path = Path('..', PurePath(parsed_book['book_path']))
         image_src = Path('..', PurePath(parsed_book['image_src']))
@@ -32,8 +32,8 @@ def get_books():
             'author': parsed_book['author'],
             'image_src': image_src
         }
-        books_information.append(book)
-    return books_information
+        books_context.append(book)
+    return books_context
 
 
 def remove_old_pages():
