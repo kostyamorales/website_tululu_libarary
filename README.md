@@ -1,6 +1,6 @@
 # website_tululu_library
 ## Онлайн библиотека книг с сайта [tululu.org](https://tululu.org/) жанра ["научная фантастика"](https://tululu.org/l55/)
-Проект позволяет публиковать заранее подготовленные с помощью [парсера](https://github.com/kostyamorales/tululu_library) книг в виде онлайн библиотеки.
+Проект позволяет публиковать заранее подготовленные с помощью [парсера](https://github.com/kostyamorales/tululu_library) книги в виде онлайн библиотеки.
 
 ![Alt text](screenshot/site.png?raw=true "Optional Title")
 
